@@ -1,0 +1,22 @@
+ALGORITHM algorithm_name
+VAR
+    st:STRING;
+    nv,nc:INTEGER:=0;
+    nw:INTEGER:=1;
+BEGIN
+    
+    REPEAT
+        Write("enter a sentence")
+        Read(st)
+    UNTIL (st[st.length-1]==".")
+    
+    FOR nc FROM 0 TO st.length-1 STEP 1  DO
+        IF (st[nc]== " ") THEN
+            nw:=nw+1
+        ELSE_IF  (st[nc] contain ["e","i","u","o","y","a","A","E","I","U","O","Y"]) THEN
+            nv:=nv+1
+        END_IF
+    END_FOR
+    Write("nb de voyel:",nv,"nb :", nc, "nb:",nw)
+
+END
